@@ -5,18 +5,40 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* Estilos para o contêiner principal */
+.container {
+  position: relative; /* Para que o texto e o GIF possam ser posicionados corretamente */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do contêiner */
+}
+
 /* Estilos para o texto sobreposto */
 .text-overlay {
-  position: absolute; /* Para posicionar em relação ao contêiner */
-  top: 50%; /* Centralizar verticalmente */
+  position: absolute; /* Para posicionar o texto em relação ao contêiner */
+  bottom: 10%; /* Posicionar o texto mais abaixo */
   left: 50%; /* Centralizar horizontalmente */
-  transform: translate(-50%, -50%); /* Ajustar a posição para centralizar */
+  transform: translateX(-50%); /* Ajustar a posição para centralizar */
   color: white; /* Cor do texto */
-  font-size: 3rem; /* Tamanho da fonte */
+  font-size: 2.5rem; /* Tamanho da fonte */
   font-family: 'Arial', sans-serif; /* Fonte do texto */
   text-align: center; /* Alinhamento do texto */
-  z-index: 10; /* Garantir que fique acima das flores */
+  z-index: 10; /* Garantir que fique acima dos outros elementos */
   animation: fadeInOut 4s ease-in-out infinite; /* Animação */
+}
+
+/* Estilos para o coração */
+.heart {
+  font-size: 3rem; /* Tamanho do coração */
+  color: red; /* Cor do coração */
+  margin-bottom: 10px; /* Espaço entre o coração e o texto */
+}
+
+/* Estilos para o GIF sobreposto */
+.gif-overlay {
+  position: absolute; /* Para posicionar o GIF em relação ao contêiner */
+  top: 10%; /* Posicionar o GIF um pouco abaixo do topo */
+  left: 50%; /* Centralizar horizontalmente */
+  transform: translateX(-50%); /* Ajustar a posição para centralizar */
+  z-index: 9; /* Colocar o GIF atrás do texto */
 }
 
 /* Animação de fade in e fade out */
@@ -31,6 +53,7 @@
     opacity: 0;
   }
 }
+
 
 :root {
   --dark-color: #000;
